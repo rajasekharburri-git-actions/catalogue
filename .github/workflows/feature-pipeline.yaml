@@ -3,13 +3,22 @@ on: [push]
 permissions:
   contents: read
   statuses: write
-jobs:
+  security-events: read
+jobs: 
   feature-pipeline:
+    if: github.ref != 'refs/heads/main'
     uses: rajasekharburri/workflows/.github/workflows/feature-nodejs-pipeline.yaml@main
     with:
       project: roboshop
       component: catalogue
-      environment: dev  #psuh
+      environment: dev
     secrets: inherit
 
-    
+  dev-pipeline:
+    if: github.ref == 'refs/heads/main'
+    uses: rajasekharburri/workflows/.github/workflows/dev-nodejs-pipeline.yaml@main
+    with:
+      project: roboshop
+      component: catalogue
+      environment: dev
+    secrets: inherit
