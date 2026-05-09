@@ -7,7 +7,7 @@ permissions:
 jobs: 
   feature-pipeline:
     if: github.ref != 'refs/heads/main'
-    uses: rajasekharburri-git-actions/workflows/.github/workflows/feature-nodejs-pipeline.yaml@main
+    uses: rajasekharburri-git-actions/workflows/.github/workflows/feature-nodejs-pipeline.yaml@main  #organization
     with:
       project: roboshop
       component: catalogue
