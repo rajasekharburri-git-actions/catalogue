@@ -3,7 +3,7 @@ on: [push]
 permissions:
   contents: read
   statuses: write
-  security-events: read  #ok
+  security-events: read
 jobs: 
   feature-pipeline:
     if: github.ref != 'refs/heads/main'
