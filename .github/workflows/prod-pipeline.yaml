@@ -16,7 +16,7 @@ permissions:
 jobs: 
   prod-pipeline:
     if: github.ref == 'refs/heads/main'
-    uses: daws-86s/workflows/.github/workflows/prod-pipeline.yaml@main
+    uses: rajasekharburri-git-actions/workflows/.github/workflows/prod-pipeline.yaml@main
     with:
       version: ${{ inputs.version }}
     secrets: inherit
